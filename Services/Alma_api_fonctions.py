@@ -92,7 +92,7 @@ class Alma_API(object):
         response = session.request(
             method=httpmethod,
             headers={
-            "User-Agent": "pyalma/{}".format(__version__),
+            "User-Agent": "pyalma/0.1.0",
             "Authorization": "apikey {}".format(self.apikey),
             "Accept": FORMATS[accept],
             "Content-Type": FORMATS[accept]
