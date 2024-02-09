@@ -163,7 +163,7 @@ def rediger_envoyer_message(sur_erreur, sujet, text, job_info=""):
     fichiers=[path.join(REP, f) for f in listdir(REP) if path.isfile(path.join(REP, f))]
     texte_message = text_erreur.format(job_info_text,text) if sur_erreur else text_succes.format(job_info_text,text)
     message = mail.Mail()
-    message.envoie(mailfrom="alexandre.faure@u-bordeaux.fr",mailto="alexandre.faure@u-bordeaux.fr",subject=sujet_message,text=texte_message,fichiers=fichiers)
+    message.envoie(mailfrom=getenv('MAILFROM'),mailto=getenv('MAILTO'),subject=sujet_message,text=texte_message,fichiers=fichiers)
 
 # crétaion et vidage du répertoire de stockage temporaire des fichiers
 if not path.exists(REP):
