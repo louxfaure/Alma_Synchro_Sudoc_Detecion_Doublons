@@ -173,7 +173,6 @@ else :
         remove(path.join(REP, f))
 log_module.info("Vidage du répertoire : {}".format(REP))
 
-exit()
 # Récupération de la liste des instance du job d'import S10796120430004671 exécutée ce jour
 job_import = Alma_api_imports.AlmaJob_Instance_Id(JOB_ID,today,today,apikey=API_KEY,service=SERVICE)
 # log_module.debug(job_import)
