@@ -8,10 +8,6 @@ from math import *
 from Services import Alma_api_fonctions
 
 
-__version__ = '0.1.0'
-__apikey__ = os.getenv('ALMA_API_KEY')
-__region__ = os.getenv('ALMA_API_REGION')
-
 class AlmaSet(object):
     """Créé un set de notice bib et et l'alimente"
     """

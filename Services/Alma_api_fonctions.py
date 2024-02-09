@@ -13,10 +13,6 @@ from math import *
 import re
 
 
-__version__ = '0.1.0'
-__apikey__ = os.getenv('ALMA_API_KEY')
-__region__ = os.getenv('ALMA_API_REGION')
-
 FORMATS = {
     'json': 'application/json',
     'xml': 'application/xml'
@@ -46,7 +42,7 @@ class Alma_API(object):
 
     def headers(self, accept='json', content_type=None):
         headers = {
-            "User-Agent": "pyalma/{}".format(__version__),
+            "User-Agent": "pyalma/0.1.0",
             "Authorization": "apikey {}".format(self.apikey),
             "Accept": FORMATS[accept]
         }

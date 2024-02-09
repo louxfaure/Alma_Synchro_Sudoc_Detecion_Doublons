@@ -6,9 +6,6 @@ import xml.etree.ElementTree as ET
 from math import *
 from Services import Alma_api_fonctions
 
-__version__ = '0.1.0'
-__apikey__ = os.getenv('ALMA_API_KEY')
-__region__ = os.getenv('ALMA_API_REGION')
 
 class AlmaJob_Instance_Id(object):
     """Return l'id de l'instance pour un jour donnée d'un job identifié via son job_id "
