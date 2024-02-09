@@ -14,7 +14,7 @@ class AlmaRecord(object):
     """A set of function for interact with Alma Apis in area "Records & Inventory"
     """
 
-    def __init__(self, mms_id,id_type='mms_id',view='full',expand='None',accept='json', apikey=__apikey__, service='AlmaPy') :
+    def __init__(self, mms_id,id_type='mms_id',view='full',expand='None',accept='json', apikey="", service='AlmaPy') :
         if apikey is None:
             raise Exception("Merci de fournir une clef d'APi")
         self.apikey = apikey

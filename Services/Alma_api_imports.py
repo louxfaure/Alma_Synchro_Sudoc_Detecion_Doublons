@@ -11,7 +11,7 @@ class AlmaJob_Instance_Id(object):
     """Return l'id de l'instance pour un jour donnée d'un job identifié via son job_id "
     """
 
-    def __init__(self,job_id, date_start,date_end,accept='json', apikey=__apikey__, service='AlmaPy') :
+    def __init__(self,job_id, date_start,date_end,accept='json', apikey="", service='AlmaPy') :
         if apikey is None:
             raise Exception("Merci de fournir une clef d'APi")
         self.apikey = apikey

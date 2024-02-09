@@ -13,7 +13,7 @@ class AlmaJob(object):
     """Lance un job"
     """
 
-    def __init__(self,job_id,operation="run",job_parameters="",accept='xml', apikey=__apikey__, service='AlmaPy') :
+    def __init__(self,job_id,operation="run",job_parameters="",accept='xml', apikey="", service='AlmaPy') :
         """AlmaJob : init lance un traitement dans Alma. La methode get_job_status() permet de savoir si le job est terminé et si celui-ci est bien terminé.
 
         Args:
@@ -21,7 +21,7 @@ class AlmaJob(object):
             operation (str, optional): type d'opération. Defaults to "run".
             job_parameters (str, optional): Paramètres à passer au job. Defaults to "".
             accept (str, optional): xml ou json. Defaults to 'xml'.
-            apikey (_type_, optional): clef de l'API. Defaults to __apikey__.
+            apikey (_type_, optional): clef de l'API. Defaults to "".
             service (str, optional): non du script qui appelle AlmaJob. Permet de récupérer la conf du logger. Defaults to 'AlmaPy'.
 
         Raises:

@@ -12,7 +12,7 @@ class AlmaSet(object):
     """Créé un set de notice bib et et l'alimente"
     """
 
-    def __init__(self,create=True,set_id="",nom="",accept='json', apikey=__apikey__, service='AlmaPy') :
+    def __init__(self,create=True,set_id="",nom="",accept='json', apikey="", service='AlmaPy') :
         if apikey is None:
             raise Exception("Merci de fournir une clef d'APi")
         self.apikey = apikey
