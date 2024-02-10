@@ -1,2 +1,4 @@
 /Test.py
 **/__pycache__/
+.vscode
+*.code-workspace
