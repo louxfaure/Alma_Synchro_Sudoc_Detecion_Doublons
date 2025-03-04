@@ -15,8 +15,10 @@ API_KEY = getenv('PROD_NETWORK_BIB_API')
 REP = '/tmp/Notices_a_fusionner/'
 LOGS_LEVEL = 'DEBUG'
 LOGS_DIR = getenv('LOGS_PATH')
-JOB_ID = 'S10796120430004671'
+# JOB_ID = 'S10796120430004671' # Plannifié
+JOB_ID = 'S11850852720004671' # Manuel
 EXPORT_JOB_PAREMETERS_FILE = './Conf/export_job_parameters.xml'
+JOB_IMPORT_ID = 'S15731461420004671'
 
 today = date.today()
 now = datetime.now()
@@ -316,7 +318,14 @@ if job_status != 'COMPLETED_SUCCESS' :
     log_module.error(status_descr)
     log_module.info("FIN DU TRAITEMENT : Echec du job d'export")
     exit()
-log_module.debug(status_descr)
+log_module.info("Lancement du job d'import pour copie des locale des notices de la CZ")
+import_job = AlmaJob.AlmaJob(job_id=JOB_IMPORT_ID,operation='run',job_parameters="{}",accept="json",apikey=API_KEY,service=SERVICE)
+job_status, status_descr = import_job.job_is_comleted()
+if job_status != 'COMPLETED_SUCCESS' :
+    rediger_envoyer_message(True, "Le traitement d'export a terminé sur une anomalie", status_descr, job_info=job_infos)
+    log_module.error(status_descr)
+    log_module.info("FIN DU TRAITEMENT : Echec du job d'export")
+    exit()
 rediger_envoyer_message(False, "Tout s'est bien passé", "Pensez à lancer le job des fusions des notices", job_info=job_infos)
  
 

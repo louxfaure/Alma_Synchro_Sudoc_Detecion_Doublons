@@ -12,8 +12,8 @@ Ce script intervient dans [la procédure de fusion des notices de documents éle
 3. Formate les données pour les écrire dans un fichier "notices_a_fusionner.csv". Crée un fichier pour 100 groupes. C'est la limite imposée par le traitement.
 4. Crée un ensemble avec la liste "liste_pour_reloc_NZ"
 5. Lance un export des notices de l'ensemble via un job Alma. Les notices sont exportés vers un serveur ftp.
-6. Envoie les rapports de traitement par mail aux opérateurs
+6. Lance l'import des notices exportés via le job "Copie locale des Notices CZ".
+7. Envoie les rapports de traitement par mail aux opérateurs
 
 ## Traitements externes au script
-1. Les notices exportées sont réimportées dans Alma pour les copier de la CZ vers la NZ. Le job d'import "Copie local des Notices CZ" s'éxécute automatiquement. Il est configuré pour s'exécuter après le passage du script. 
-2. S'il y a lieu, l'opérateur exécute le job "Fusionner les notices et combiner l'inventaire".
+1. S'il y a lieu, l'opérateur exécute le job "Fusionner les notices et combiner l'inventaire".
