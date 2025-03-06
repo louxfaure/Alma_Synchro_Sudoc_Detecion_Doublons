@@ -18,7 +18,8 @@ LOGS_DIR = getenv('LOGS_PATH')
 JOB_ID = 'S10796120430004671' # Plannifié
 # JOB_ID = 'S11850852720004671' # Manuel
 EXPORT_JOB_PAREMETERS_FILE = './Conf/export_job_parameters.xml'
-JOB_IMPORT_ID = 'S15731461420004671'
+# Job d'import pour copie des notices de la CZ dans la NZ locales
+JOB_IMPORT_ID = 'S18649484760004671'
 
 today = date.today()
 now = datetime.now()
