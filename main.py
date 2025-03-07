@@ -320,7 +320,7 @@ if job_status != 'COMPLETED_SUCCESS' :
     log_module.info("FIN DU TRAITEMENT : Echec du job d'export")
     exit()
 log_module.info("Lancement du job d'import pour copie des locale des notices de la CZ")
-import_job = AlmaJob.AlmaJob(job_id=JOB_IMPORT_ID,operation='run',job_parameters="{}",accept="json",apikey=API_KEY,service=SERVICE)
+import_job = AlmaJob.AlmaJob(job_id=JOB_IMPORT_ID,operation='run',job_parameters='<job></job>',accept="xml",apikey=API_KEY,service=SERVICE)
 job_status, status_descr = import_job.job_is_comleted()
 if job_status != 'COMPLETED_SUCCESS' :
     rediger_envoyer_message(True, "Le traitement d'export a terminé sur une anomalie", status_descr, job_info=job_infos)
